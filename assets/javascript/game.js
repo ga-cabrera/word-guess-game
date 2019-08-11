@@ -19,4 +19,11 @@ var wordList = [
     "ten"
 ];
 
+// Picking Random Word from wordlist
 var word = wordlist[Math.floor(Math.random() * wordlist.length)];
+
+// Answer Array
+var answerArray = [];
+for (var i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+}
