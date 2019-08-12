@@ -1,11 +1,11 @@
 // My Pseudo Code :
-// Step 1: List of words
-// Step 2: Pick a word
-// Step 3: Create spaces for letters of words (underscores)
-// Step 4: Player picks letter/ guesses word
-// Step 5: Determine whether letter/guess is true or false
-//  * If true, empty space will be filled with correct letter
-//  * If false, incorrect letter will be added to "wrong letter" pile
+// Step 1: List of letters
+// Step 2: Computer chooses random letter
+// Step 3: Guess letter by pressing letter on keyboard
+// Step 4: If letter is correct, you win, win score increments, game resets
+// Step 5: If letter is incorrect, amount of guesses decreases by one. Repeat
+// Step 6: If amount of guesses = 0, you lose, losses score increments by one, game resets
+
 var alphabet = [
     "a",
     "b",
@@ -38,8 +38,3 @@ var alphabet = [
 // Picking Random letter from alphabet
 var letter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
-// Answer Array
-var answerArray = [];
-for (var i = 0; i < word.length; i++) {
-    answerArray[i] = "_";
-}
