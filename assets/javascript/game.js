@@ -6,6 +6,7 @@
 // Step 5: If letter is incorrect, amount of guesses decreases by one. Repeat
 // Step 6: If amount of guesses = 0, you lose, losses score increments by one, game resets
 
+// List of Letters
 var alphabet = [
     "a",
     "b",
@@ -34,7 +35,9 @@ var alphabet = [
     "y",
     "z",
 ];
-
-// Picking Random letter from alphabet
-var letter = alphabet[Math.floor(Math.random() * alphabet.length)];
+//  Computer chooses random letter
+answer = function(alphabet) {
+    return alphabet[Math.floor((Math.random() * alphabet.length))];
+}
+answer()
 
