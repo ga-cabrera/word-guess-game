@@ -46,14 +46,24 @@ var alphabet = [
 ];
 //  Computer chooses random letter
 var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
+
 // vv Game Functions vv
 
 // Guess Counter Function
 function guessCounter () {
     document.querySelector("#guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
 }
+guessCounter()
 
 // guesses-so-far function
 function lettersGuessed () {
     document.querySelector("#guessedLetters").innerHTML = "Your Guesses so Far: " + guessedLetters.join(" ");
 }
+
+// reset function (when you win or lose a game)
+function reset() {
+    guessesLeft = 9;
+    guessedLetters = [];
+    var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
+}
+
