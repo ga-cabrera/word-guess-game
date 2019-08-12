@@ -52,3 +52,8 @@ var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
 function guessCounter () {
     document.querySelector("#guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
 }
+
+// guesses-so-far function
+function lettersGuessed () {
+    document.querySelector("#guessedLetters").innerHTML = "Your Guesses so Far: " + guessedLetters.join(" ");
+}
