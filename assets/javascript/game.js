@@ -6,21 +6,37 @@
 // Step 5: Determine whether letter/guess is true or false
 //  * If true, empty space will be filled with correct letter
 //  * If false, incorrect letter will be added to "wrong letter" pile
-var wordList = [
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-    "ten"
+var alphabet = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
 ];
 
-// Picking Random Word from wordlist
-var word = wordlist[Math.floor(Math.random() * wordlist.length)];
+// Picking Random letter from alphabet
+var letter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
 // Answer Array
 var answerArray = [];
