@@ -36,8 +36,5 @@ var alphabet = [
     "z",
 ];
 //  Computer chooses random letter
-answer = function(alphabet) {
-    return alphabet[Math.floor((Math.random() * alphabet.length))];
-}
-answer()
-
+var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
+// Guess letter by pressing letter on keyboard 
