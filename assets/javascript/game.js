@@ -6,6 +6,14 @@
 // Step 5: If letter is incorrect, amount of guesses decreases by one. Repeat
 // Step 6: If amount of guesses = 0, you lose, losses score increments by one, game resets
 
+// My starting variables
+var win = 0;
+var lose = 0;
+var guessesLeft = 10;
+// empty variable for your guessed letters so far in the game
+var guessedLetters = [] 
+
+
 // List of Letters
 var alphabet = [
     "a",
@@ -38,3 +46,5 @@ var alphabet = [
 //  Computer chooses random letter
 var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
 // Guess letter by pressing letter on keyboard 
+
+
