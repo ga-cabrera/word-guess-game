@@ -10,7 +10,8 @@
 var win = 0;
 var lose = 0;
 var guessesLeft = 10;
-// empty variable for your guessed letters so far in the game
+
+// empty array for guessed letters so far in the game
 var guessedLetters = [] 
 
 
@@ -45,6 +46,9 @@ var alphabet = [
 ];
 //  Computer chooses random letter
 var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
-// Guess letter by pressing letter on keyboard 
+// vv Game Functions vv
 
-
+// Guess Counter Function
+function guessCounter () {
+    document.querySelector("#guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+}
