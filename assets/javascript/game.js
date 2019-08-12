@@ -46,6 +46,7 @@ var alphabet = [
 ];
 //  Computer chooses random letter
 var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
+console.log("Computer knows you're cheating... Answer: " + computerAnswer);
 
 // vv Game Functions vv
 
@@ -57,7 +58,7 @@ guessCounter()
 
 // guesses-so-far function
 function lettersGuessed () {
-    document.querySelector("#guessedLetters").innerHTML = "Your Guesses so Far: " + guessedLetters.join(" ");
+    document.querySelector("#lettersGuessed").innerHTML = "Your Guesses so Far: " + guessedLetters.join(" ");
 }
 
 // reset function (when you win or lose a game)
@@ -67,3 +68,12 @@ function reset() {
     var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
 }
 
+document.onkeyup = function(event) {
+    guessesLeft--;
+
+    var yourGuess = String.fromCharCode(event.keycode).toLowerCase();
+
+    guessedLetters.push(yourGuess);
+    guessCounter();
+    lettersGuessed();
+}
