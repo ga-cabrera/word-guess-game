@@ -8,12 +8,8 @@
 
 // My starting variables
 var win = 0;
-console.log("wins: " + win);
 var lose = 0;
-console.log("losses: " +lose);
 var guessesLeft = 10;
-console.log("guesses left: " + guessesLeft);
-
 // empty array for guessed letters so far in the game
 var guessedLetters = [] 
 
@@ -53,28 +49,28 @@ console.log("Computer knows you're cheating... The answer is " + "'" + computerA
 // vv Game Functions vv
 
 // Guess Counter Function
-function guessCounter () {
+var guessCounter = function(){
     document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
-}
+};
 // without this, guess counter will be empty when you begin the game (until you press any button)
-guessCounter()
+guessCounter();
 
 // guesses-so-far function
 function lettersGuessed () {
     document.getElementById("lettersGuessed").innerHTML = "Your Guesses So Far: " + guessedLetters.join(", ");
-}
+};
 
 // reset function (when you win or lose a game)
 function reset() {
-    guessesLeft = 10;
+    guessesLeft = 11;
     guessedLetters = [];
     var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
-}
+};
 
 document.onkeyup = function(event) {
     guessesLeft--;
 
-    var yourGuess = String.fromCharCode(event.keycode).toLowerCase();
+    var yourGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
     guessedLetters.push(yourGuess);
     guessCounter();
@@ -83,5 +79,11 @@ document.onkeyup = function(event) {
     if (yourGuess === computerAnswer) {
         win++;
         document.querySelector("#win").innerHTML = "Wins: " + win;
+        reset();
     }
-}
+    else if (guessesLeft === 0) {
+        lose++;
+        document.getElementById("lose").innerHTML = "Losses: " + lose;
+        reset ();
+    }
+};
