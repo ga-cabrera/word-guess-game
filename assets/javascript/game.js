@@ -44,7 +44,7 @@ var alphabet = [
 ];
 //  Computer chooses random letter
 var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
-console.log("Computer knows you're cheating... The answer is " + "'" + computerAnswer + "'");
+console.log("Computer Answer: " + computerAnswer);
 
 // vv Game Functions vv
 
@@ -62,28 +62,36 @@ function lettersGuessed () {
 
 // reset function (when you win or lose a game)
 function reset() {
-    guessesLeft = 11;
+    guessesLeft = 10;
     guessedLetters = [];
-    var computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
+    document.getElementById("lettersGuessed").innerHTML = "Your Guesses So Far: ";
+    document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+    
+    computerAnswer = alphabet[Math.floor(Math.random()*alphabet.length)];
 };
 
 document.onkeyup = function(event) {
     guessesLeft--;
 
     var yourGuess = String.fromCharCode(event.keyCode).toLowerCase();
-
+    console.log(yourGuess);
     guessedLetters.push(yourGuess);
+    console.log(computerAnswer);
+    console.log(yourGuess===computerAnswer);
     guessCounter();
     lettersGuessed();
     
     if (yourGuess === computerAnswer) {
         win++;
-        document.querySelector("#win").innerHTML = "Wins: " + win;
+        document.getElementById("win").innerHTML = "Wins: " + win;
         reset();
+        console.log("new answer: " + computerAnswer);
+
     }
     else if (guessesLeft === 0) {
         lose++;
         document.getElementById("lose").innerHTML = "Losses: " + lose;
-        reset ();
+        reset();
+        console.log("new answer: " + computerAnswer);
     }
 };
